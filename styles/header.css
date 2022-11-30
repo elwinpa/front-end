@@ -1,0 +1,49 @@
+.fixed-header{
+    width: 100%;
+    position: fixed;        
+    background: black;
+    padding: 10px 0;
+    color: white;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    z-index: 9
+}
+.header-contents{
+    display: flex;
+    justify-content: flex-end;
+}
+.main-logo{
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+}
+
+.sign-in{
+    width: 90px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart{
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-header{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.sub-header span{
+    padding-right: 30px
+}
+
+.sub-header a{
+    text-decoration: none;
+    color: white;
+}
