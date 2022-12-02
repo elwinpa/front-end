@@ -23,7 +23,23 @@
           <div class="header-contents">
             <div class="sign-in">
               <i class="fa fa-user-circle" style="font-size: 36px"></i>
-              <span>Sign In</span>
+              <span><a class="button" href="#popup1">Log In</a></span>
+            </div>
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#">&times;</a>
+                    <form action="/">
+                        <div class="getin-left"></div>
+                        <div class="getin-right"></div>
+                        <div class="getin-content">
+                          <input type="email" placeholder="Email">
+                          <input type="password" placeholder="password">
+                          <button type="submit" href="/">Log In</button>
+                          <p>Don't have an account?</p>
+                          <p><a href="/">Start here</a></p>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="cart">
               <i class="fa fa-cart-plus" style="font-size: 36px"></i>
