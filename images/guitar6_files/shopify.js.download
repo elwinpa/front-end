@@ -1,0 +1,299 @@
+﻿var pb_prequalify_global = {
+  debounce: function (func, wait, immediate) {
+    var timeout;
+    var fn = function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+    return fn.bind(this);
+  },
+  checkHeight: function () {
+    var pb_iframe = document.querySelector("#pb_iframe");
+    if (pb_iframe) {
+      pb_iframe.contentWindow.postMessage({ pb_check_height: true }, "*");
+    }
+  },
+  cachedWidth: window.innerWidth,
+  debouncedResizer: function (ms) {
+    return this.debounce(function () {
+      this.cachedWidth === window.innerWidth || this.checkHeight();
+      this.cachedWidth = window.innerWidth;
+    }, ms)();
+  },
+};
+
+function handleMessage(e) {
+  var close_pbModal = e.data.close_pbModal;
+  var pb_height = e.data.pb_height;
+
+  if (pb_height) {
+    var iframe = document.querySelector("#pb_iframe");
+    console.log("height: ", pb_height);
+    if (iframe) {
+      iframe.style.height = pb_height + 20 + "px";
+      iframe.style.transition = "height 500ms";
+    }
+  }
+  if (close_pbModal == "true") {
+    var paybrightmodal = document.getElementById("pbModal");
+    if (paybrightmodal) {
+      paybrightmodal.style.display = "none";
+    }
+  }
+}
+
+window.addEventListener("message", handleMessage);
+
+window.onload = function () {
+  var requestURL = document.getElementById("paybright").getAttribute("src");
+  var public_key = "";
+  var financedamount = "";
+  var mid = "";
+
+  //next use substring() to get querystring part of src
+  var queryString = requestURL.substring(
+    requestURL.indexOf("?") + 1,
+    requestURL.length
+  );
+
+  //Next split the querystring into array
+  var params = queryString.split("&");
+
+  //Next loop through params
+  for (var i = 0; i < params.length; i++) {
+    var name = params[i].substring(0, params[i].indexOf("="));
+    var value = params[i].substring(
+      params[i].indexOf("=") + 1,
+      params[i].length
+    );
+
+    //Test if value is a number. If not, wrap value with quotes:
+    // if (isNaN(parseInt(value))) {
+    params[i] = params[i].replace(value, "'" + value + "'");
+    // }
+
+    // Finally, use eval to set values of pre-defined variables:
+    eval(params[i]);
+  }
+
+  _paybright_config = {
+    public_key: public_key,
+    client_prefix: pb_parse_URL(requestURL).host,
+    mid: mid,
+  };
+
+  pb_prequalify(_paybright_config.public_key, mid, financedamount);
+};
+
+function pb_prequalify(pb_accountkey, mid, financedamount) {
+  var mid = mid;
+  var pb_accountkey = pb_accountkey;
+  var financedamount = financedamount;
+
+  if (financedamount != "") {
+    var requestamt1 = financedamount.replace("$", "");
+    var requestamt2 = requestamt1.indexOf(",");
+    if (requestamt2 != -1) {
+      var amt1 = requestamt1.replace(",", "");
+    } else {
+      var amt1 = requestamt1;
+    }
+    var amount = parseFloat(amt1).toFixed(2);
+  } else {
+    var amount = financedamount;
+  }
+
+  var amount = amount;
+
+  var queryString = "";
+  if (mid != "") {
+    queryString += "mid=" + mid;
+  }
+  if (pb_accountkey != "") {
+    queryString += "public_key=" + pb_accountkey;
+  }
+  if (financedamount != "") {
+    queryString += "&purchase_amount=" + amount;
+  }
+
+  // Sending and receiving data in JSON format using POST mothod
+  var xhr = new XMLHttpRequest();
+  var url = "https://" + _paybright_config.client_prefix + "/api/api.aspx";
+  //var url = "https://sandbox.paybright.com/api/api.aspx";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var json = JSON.parse(xhr.responseText);
+
+      function format(number) {
+        var decimalSeparator = ".";
+        var thousandSeparator = ",";
+
+        // make sure we have a string
+        var result = String(number);
+
+        // split the number in the integer and decimals, if any
+        var parts = result.split(decimalSeparator);
+
+        // if we don't have decimals, add .00
+        if (!parts[1]) {
+          parts[1] = "00";
+        }
+
+        // reverse the string (1719 becomes 9171)
+        result = parts[0].split("").reverse().join("");
+
+        // add thousand separator each 3 characters, except at the end of the string
+        result = result.replace(/(\d{3}(?!$))/g, "$1" + ",");
+
+        // reverse back the integer and replace the original integer
+        parts[0] = result.split("").reverse().join("");
+
+        // recombine integer with decimals
+        return parts.join(".");
+      }
+      instalmentamt = Math.round(json[0].MonthlyPayment);
+      MP = format(json[0].MonthlyPayment);
+      APR = json[0].AnnualPercentagerate;
+      IsSmallLoan = json[0].IsSmallLoan;
+      OnlineMinRetailerAmt = parseFloat(json[0].OnlineMinRetailerAmt);
+      if (amount != "") {
+        // Don't show the modal if the amount is less than the retailer min amount set.
+        if (amount < OnlineMinRetailerAmt) {
+          return;
+        }
+        // Don't show the modal if the Monthly Instalment is 0 -- Can be in case of Small Loans where the amount is greater than 500 and the merchant has no rates for bigger amounts
+        if (instalmentamt == "0") {
+          return;
+        }
+      }
+
+      var ca_url =
+        "https://app.paybright.com/Payments/PreApproval/Preapproval_v2.aspx?";
+      if (_paybright_config.client_prefix.includes("sandbox")) {
+        ca_url =
+          "https://sandbox.paybright.com/Payments/PreApproval/Preapproval_v2.aspx?";
+      }
+
+      var ss = document.createElement("link");
+      ss.type = "text/css";
+      ss.rel = "stylesheet";
+      ss.href =
+        "https://" + _paybright_config.client_prefix + "/api/pb_shopify.css";
+      //ss.href = "https://sandbox.paybright.com/api/pb_shopify.css";
+
+      document.getElementsByTagName("head")[0].appendChild(ss);
+      document.getElementById("paybright-widget-container").innerHTML = "";
+      {
+        if (IsSmallLoan == "1") {
+          document.getElementById("paybright-widget-container").innerHTML +=
+            "<p style='font-family:Open Sans;'>or 4 interest-free payments of $" +
+            instalmentamt +
+            " with <img src = 'https://ca.paybright.com/Content/Rebrand/SVGs/PayBrightLogo.svg' alt='PayBright' style='vertical-align:text-bottom !important;max-width:95px;' />. <a id='paybright-learnmore'>Learn more</a></p>";
+        } else {
+          if (amount == "") {
+            document.getElementById("paybright-widget-container").innerHTML +=
+              "<p style='font-family:Open Sans;'>Buy Now, Pay Later “   <a id='paybright-learnmore' data-toggle='modal' data-target='#pbModal' class='peloton-color' data-backdrop='static' data-keyboard='false'>Prequalify with PayBright</a></p>";
+          } else {
+            if (APR > 0) {
+              document.getElementById("paybright-widget-container").innerHTML +=
+                "<p style='font-family:Open Sans;'>or pay as low as $" +
+                MP +
+                "/mo with <img src = 'https://ca.paybright.com/Content/Rebrand/SVGs/PayBrightLogo.svg' alt='PayBright' style='vertical-align:middle !important;max-width:95px;' />. <a id='paybright-learnmore' data-toggle='modal' data-target='#pbModal' class='peloton-color' data-backdrop='static' data-keyboard='false'>Prequalify Now</a></p > ";
+            } else {
+              document.getElementById("paybright-widget-container").innerHTML +=
+                "<p style='font-family:Open Sans;'>or pay as low as $" +
+                MP +
+                "/mo at 0% APR with <img src = 'https://ca.paybright.com/Content/Rebrand/SVGs/PayBrightLogo.svg' alt='PayBright' style='vertical-align:middle !important;max-width:95px;' />. <a id='paybright-learnmore' data-toggle='modal' data-target='#pbModal' class='peloton-color' data-backdrop='static' data-keyboard='false' >Prequalify Now</a></p>";
+            }
+          }
+        }
+        document.getElementById("paybright-widget-container").innerHTML +=
+          "<div id='pbModal' class='paybright-class-modal'><div class='paybright-class-modal-content'  ><span class='paybright-class-close' id='pb_btnClose' data-dismiss='modal' style='display:none;'>&times;</span><div style='clear:both'></div><div class='paybright-class-modal-body'  style='padding-top:0 !important'><div><iframe name='iframe' id ='pb_iframe' style = 'background-color:white;width:100%;' scrolling='no' frameborder='0' src ='" +
+          ca_url +
+          queryString +
+          "' sandbox ='allow-forms allow-scripts allow-popups allow-top-navigation allow-modals allow-same-origin'></iframe ></div></div></div></div>";
+      }
+
+      // Get the modal
+      var paybrightmodal = document.getElementById("pbModal");
+      paybrightmodal.style.display = "none";
+      // Get the button that opens the modal
+      var paybrightlearnmore = document.getElementById("paybright-learnmore");
+
+      // Get the <span> element that closes the modal
+      var paybrightclassclose = document.getElementById("pb_btnClose");
+
+      // When the user clicks the button, open the modal
+      paybrightlearnmore.onclick = function () {
+        paybrightmodal.style.display = "block";
+        pb_prequalify_global.checkHeight();
+      };
+
+      // Add debounced event listener to check modal size on window resize
+      window.addEventListener(
+        "resize",
+        pb_prequalify_global.debouncedResizer.bind(pb_prequalify_global, 500)
+      );
+
+      // When the user clicks on <span> (x), close the modal
+      paybrightclassclose.onclick = function () {
+        paybrightmodal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == paybrightmodal) {
+          paybrightmodal.style.display = "none";
+        }
+      };
+    }
+  };
+  var data = JSON.stringify({
+    mid: mid,
+    accountid: pb_accountkey,
+    amount: amount,
+  });
+  xhr.send(data);
+}
+
+function pb_parse_URL(url) {
+  var a = document.createElement("a");
+  a.href = url;
+  return {
+    source: url,
+    protocol: a.protocol.replace(":", ""),
+    host: a.hostname,
+    port: a.port,
+    query: a.search,
+    params: (function () {
+      var ret = {},
+        seg = a.search.replace(/^\?/, "").split("&"),
+        len = seg.length,
+        i = 0,
+        s;
+      for (; i < len; i++) {
+        if (!seg[i]) {
+          continue;
+        }
+        s = seg[i].split("=");
+        ret[s[0]] = s[1];
+      }
+      return ret;
+    })(),
+    file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ""])[1],
+    hash: a.hash.replace("#", ""),
+    path: a.pathname.replace(/^([^\/])/, "/$1"),
+    relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ""])[1],
+    segments: a.pathname.replace(/^\//, "").split("/"),
+  };
+}

@@ -318,3 +318,111 @@ body{
 #used-gear, #search, #repairs, #home, #about, #get-in-touch, #shop-online {
     scroll-margin-top: 100px;
 }
+.title-style{
+   color: white;
+    text-decoration: auto;
+}
+/*shop-details-page style starts here*/
+
+.item1
+    {
+        padding: 325px 25px 25px 25px;
+        font-size: 20px;
+        font-family: sans-serif;
+        color: #fff;
+    }
+    
+.imgg {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0px;
+}
+.imgg-music{
+  margin: 0 auto;
+    max-width: 100%;
+    padding: 0px;
+    width:263px;
+    height:263px;
+}
+#band-items,#piano-items,#recorder-items,#violin-items,#dj-items,#book-items{
+  height:518px;
+}
+
+.all-shops-header{
+  margin-top:150px;
+  color:brown;
+}
+
+.shop-container {
+  background-color:#2c3e5033;
+  width: 1000px;
+  height:1000px;
+  margin: 100px auto;
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px; 
+  margin-top:22px
+    }
+
+    .item_info {
+    background: rgb(230,230,230) none repeat scroll 0 0;
+    display: inline-block;
+    font-size: 16px;
+    min-height: 140px;
+    padding: 30px 5px;
+    position: relative;
+    width: 96%;
+}
+.item_info .item-grid-title {
+    color: #3e4749;
+    font-size: 15px;
+    font-weight: 600;
+    text-align:center;
+}
+.item_info .item-link-details {
+    color: #0097c3;
+    text-align:center;
+}
+.item-link-details {
+    font-size: .85em;
+    line-height: 1.5;
+    color: #707070;
+}
+.item-grid-title, .item-link-details {
+    position: relative;
+    margin-bottom: 5px;
+   
+}
+p {
+    margin: 0 0 15px;
+}
+.home-next{
+  padding-right:890px;;
+}
+.item {
+  padding: 25px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #fff;
+}
+.blue_button{
+    background: rgb(195, 0, 0) none repeat scroll 0 0;
+    bottom: 37px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    height: 30px;
+    left: 0;
+    line-height: 30px;
+    margin: auto;
+    max-width: 115px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    width: 100%;
+    text-align:center;
+  }
+  
+
+
