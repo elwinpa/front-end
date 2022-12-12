@@ -123,3 +123,14 @@
   .header-contents form {
     margin: 30px auto;
   }
+  
+  @media only screen and (max-width: 600px) {
+    .main-logo{
+        height: 100px;
+        width: 100px;
+    }
+    .sub-header {
+        display: none;
+    }
+
+  }

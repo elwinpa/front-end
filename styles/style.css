@@ -432,3 +432,137 @@ p {
   width: 100%;
   text-align: center;
 }
+
+
+
+.open-cart {
+    height: calc(100% - 70px);
+    width: 30%;
+    right: 0;
+    left: auto;
+    top: 70px;
+    background-color: white;
+    position: fixed;
+    z-index: 8;
+}
+.open-cart .open-cart-header {
+    padding: 25px 0;
+    border-bottom: 3px solid purple;
+    font-size: 30px;
+}
+.open-cart .cart-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    height: 250px;
+    overflow: overlay;
+}
+.open-cart .cart-items .item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(199, 143, 199);
+}
+.open-cart .cart-items .item img {
+    width: 80px;
+    height: 80px;
+}
+.open-cart .cart-items .item div {
+    padding-left: 30px;
+}
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+}
+#cart-melody {
+    z-index: 8;
+}
+.open-cart .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .open-cart .close:hover {
+    color: #06D85F;
+  }
+  .cart-items::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .cart-items::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+
+  .cart-items::-webkit-scrollbar-thumb {
+    background: purple;
+    border-radius: 10px;
+  }
+
+  .sign {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2;
+    left: 50%;
+    top: 30%;
+    font-family: "Clip";
+    text-transform: uppercase;
+    font-size: 3em;
+    color: #ffe6ff;
+    
+  }
+  
+  @keyframes blink {
+    to {
+      color: #ffe6ff;
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+    }
+    from {
+      color: #ff2483;
+      text-shadow: none;
+    }
+  }
+  
+  .flicker {
+    animation: blink 2s 0s infinite;
+  }
+  #shop-online{
+    margin-top: 30px;
+  }
+  @media only screen and (max-width: 600px) {
+    .wallpaper {
+        height: 200px;
+    }
+    .tiles>div , .used-gear>div{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-us-header , .repairs-header{
+        font-size: 25px;
+        padding-right: 10px;
+    }
+    .container{
+        width: 95%;
+    }
+    .sign{
+        font-size: 19px;
+        top: 20%;
+    }
+    .open-cart{
+        width: 90%;
+    }
+}
+  
+
+  
