@@ -453,7 +453,7 @@ p {
 .open-cart .cart-items {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 20px;
     height: 250px;
     overflow: overlay;
 }
@@ -469,6 +469,8 @@ p {
 }
 .open-cart .cart-items .item div {
     padding-left: 30px;
+    font-size: 15px;
+    color: black;
 }
 .cart-container {
     width: 80%;
@@ -562,6 +564,17 @@ p {
     .open-cart{
         width: 90%;
     }
+}
+#add-to-cart1 .popup{
+    background-color: white;
+    color: purple;
+    margin-top: 20%;
+}
+#add-to-cart1{
+    z-index: 8;
+}
+#add-to-cart1 .popup div{
+    padding-top: 5px;
 }
   
 
