@@ -282,7 +282,7 @@ form {
 .getin-content input,
 .getin-content textarea {
   display: block;
-  width: 100%;
+  width: 97%;
   border: none;
   border-radius: 20px;
   background: #d0dfe8;
@@ -296,7 +296,7 @@ button {
   width: 100%;
   border-radius: 20px;
   border: none;
-  padding: 10px;
+  padding: 10px 0;
   margin-top: 20px;
   font-size: 16px;
   font-weight: 400;
@@ -704,4 +704,14 @@ p {
 .used-subheader-desc::-webkit-scrollbar-thumb {
   background: purple;
   border-radius: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .main-logo{
+      height: 100px;
+      width: 100px;
+  }
+  .sub-header {
+      display: none;
+  }
+
 }

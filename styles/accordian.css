@@ -79,7 +79,7 @@ input:checked + .tab-label {
 input:checked + .tab-label::after {
     transform: rotate(90deg);
   }
-input:checked~ .tab-content {
+input:checked ~ .tab-content {
     max-height: 100vh;
     padding: 1em;
   }
