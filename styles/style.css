@@ -347,17 +347,17 @@ button:hover {
   width: 263px;
   height: 263px;
 }
-#band-items,
-#piano-items,
-#recorder-items,
-#violin-items,
-#dj-items,
-#book-items {
+#band-item,
+#piano-item,
+#recorder-item,
+#violin-item,
+#dj-item,
+#book-item {
   height: 518px;
 }
 
 .all-shops-header {
-  margin-top: 90px;
+  margin-top: 150px;
   color: brown;
 }
 
