@@ -2,12 +2,11 @@
 @import "accordian.css";
 body {
   padding-top: 60px;
-  padding-bottom: 40px;
   margin: 0px;
 }
 .container {
   width: 85%;
-  margin: 0 auto; /* Center the DIV horizontally */
+  margin: 0 auto;
 }
 .wallpaper {
   width: 100%;
@@ -149,7 +148,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.used-gear > div > div {
+.used-gear > div > div, .used-gear > div > a {
   width: 300px;
   height: 260px;
   background-size: 300px 260px;
@@ -158,7 +157,7 @@ body {
   cursor: pointer;
   position: relative;
 }
-.used-gear > div > div > span {
+.used-gear > div > div > span, .used-gear > div > a > span {
   position: absolute;
   right: -12px;
   top: -12px;
@@ -169,14 +168,14 @@ body {
   height: 25px;
   width: 25px;
 }
-.used-gear > div > div > img {
+.used-gear > div > div > img, .used-gear > div > a > img {
   width: 100%;
   height: 100%;
 }
-.used-gear > div > div:hover {
+.used-gear > div > div:hover, .used-gear > div > a:hover {
   transform: scale(1.1);
 }
-.used-gear > div > div > div {
+.used-gear > div > div > div, .used-gear > div > a > div {
   position: absolute;
   bottom: 0;
   padding: 10px;
@@ -446,9 +445,21 @@ p {
     z-index: 8;
 }
 .open-cart .open-cart-header {
-    padding: 25px 0;
+    padding: 15px 0;
     border-bottom: 3px solid purple;
-    font-size: 30px;
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.open-cart .cart-address-header {
+    padding: 15px 0;
+    border-bottom: 3px solid purple;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .open-cart .cart-items {
     display: flex;
@@ -546,6 +557,9 @@ p {
     .wallpaper {
         height: 200px;
     }
+    .header-contents{
+        top: 0;
+    }
     .tiles>div , .used-gear>div{
         flex-direction: column;
         align-items: center;
@@ -576,6 +590,107 @@ p {
 #add-to-cart1 .popup div{
     padding-top: 5px;
 }
-  
+.place-order {
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    background-color: purple;
+}
+.place-order:hover{
+    background-color: rgb(154, 59, 154);
+}
+.place-order-container {
+    position: absolute;
+    left: 10%;
+    bottom: 25px;
+}
+.footer {
+   
+    background-color: black;
+    color: white;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+.footer ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer li{
+    padding-bottom: 10px;
+}
+.footer-icons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-top: 30px;
+}
+.sign-in i, .cart i{
+    font-size: 36px;
+}
+.used-desc-img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 20px auto;
+}
+.used-gear-popup{
+  background-color: white;
+  color: black;
+  z-index: 8;
+}
+.used-gear-overlay .used-name{
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.used-gear-overlay .used-subheader{
+  font-size: 20px;
+  padding: 15px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid purple;
+}
+.used-overlay-img {
+  width: 100%;
+}
+.used-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+}
+.used-price > div {
+  font-size: 28px;
+  color: purple;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.used-add-to-cart {
+  text-align: center;
+  color: white;
+  background-color: purple;
+  width: 50%;
+  margin-top: 0;
+}
+.used-add-to-cart:hover{
+  background-color: rgb(154, 59, 154);
+}
+.used-subheader-desc{
+  height: 130px;
+  overflow: overlay;
+}
+.used-subheader-desc::-webkit-scrollbar {
+  width: 8px;
+}
 
-  
+.used-subheader-desc::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+.used-subheader-desc::-webkit-scrollbar-thumb {
+  background: purple;
+  border-radius: 10px;
+}
