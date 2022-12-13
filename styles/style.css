@@ -357,8 +357,19 @@ button:hover {
 }
 
 .all-shops-header {
-  margin-top: 150px;
+  margin-top: 110px;
   color: brown;
+}
+
+#guitar-items,
+#drum-items,
+#band-items,
+#piano-items,
+#recorder-items,
+#violin-items,
+#dj-items,
+#book-items{
+  scroll-margin-top:100px;
 }
 
 .shop-container {
