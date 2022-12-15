@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Melody Music store sell musical instruments and related equipment and accessories.">
+    <meta name="keywords" content="Melody, music, guitar, violin, drums, used music appliances, keyboards, dj, soundbars, musicbooks, band">
     <title>Music store</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+   >
   </head>
   <body>
     <div class="fixed-header">
@@ -17,284 +19,425 @@
           <img
             class="main-logo"
             src="images/melody_logo.png"
-            width="125"
-            height="125"
-          />
+            alt="melody-logo"
+         >
           <div class="header-contents">
             <div class="sign-in">
-              <i class="fa fa-user-circle" style="font-size: 36px"></i>
+              <i class="fa fa-user-circle"></i>
               <span><a class="button" href="#popup1">Log In</a></span>
             </div>
             <div id="popup1" class="overlay">
-                <div class="popup">
-                    <a class="close" href="#">&times;</a>
-                    <form action="/">
-                        <div class="getin-left"></div>
-                        <div class="getin-right"></div>
-                        <div class="getin-content">
-                          <input type="email" placeholder="Email">
-                          <input type="password" placeholder="password">
-                          <button type="submit" href="/">Log In</button>
-                          <p>Don't have an account?</p>
-                          <p><a href="/">Start here</a></p>
-                        </div>
-                    </form>
-                </div>
+              <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <form action="/">
+                  <div class="getin-left"></div>
+                  <div class="getin-right"></div>
+                  <div class="getin-content">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="password">
+                    <button type="submit">Log In</button>
+                    <p>Don't have an account?</p>
+                    <p><a href="/">Start here</a></p>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="cart">
-              <i class="fa fa-cart-plus" style="font-size: 36px"></i>
+              <i class="fa fa-cart-plus"></i>
               <span><a class="button" href="#cart-melody">Cart</a></span>
             </div>
           </div>
         </div>
         <div class="sub-header">
-            
-                <span><a href="#home">Home</a></span>
-                <span><a href="#shop-online">Shop Online</a></span>
-                <span><a href="#search">Search</a></span>
-                <span><a href="#about">About</a></span>
-                <span><a href="#repairs">Repairs</a></span>
-                <span><a href="#used-gear">Used Gear</a></span>
-                <span><a href="#get-in-touch">Get in Touch</a></span>
+          <span><a href="#home">Home</a></span>
+          <span><a href="#shop-online">Shop Online</a></span>
+          <span><a href="#search">Search</a></span>
+          <span><a href="#about">About</a></span>
+          <span><a href="#repairs">Repairs</a></span>
+          <span><a href="#used-gear">Used Gear</a></span>
+          <span><a href="#get-in-touch">Get in Touch</a></span>
         </div>
-    
       </div>
     </div>
-    <div id="cart-melody"  class="overlay">
-    <div  class="open-cart">
+    <div id="cart-melody" class="overlay">
+      <div class="open-cart">
         <a class="close" href="#">&times;</a>
-        <div class="open-cart-header cart-container">
-            Items in Cart
-        </div>
+        <div class="open-cart-header cart-container">Items in Cart</div>
         <div class="cart-items cart-container">
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
+          <div class="item">
+            <img src="/images/guitar1.webp" alt="cart-item">
+            <div>
+              Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany
             </div>
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
+          </div>
+          <div class="item">
+            <img src="/images/drum1.webp" alt="cart-item">
+            <div>
+              Pearl Decade Mahagony 5 Piece Shell Pack in Satin Black Burst
             </div>
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
+          </div>
+          <div class="item">
+            <img src="/images/orch1.jpg" alt="cart-item">
+            <div>Christopher 302 Model Elegant Hybrid 3/4 Bass</div>
+          </div>
+          <div class="item">
+            <img src="/images/key1.webp" alt="cart-item">
+            <div>NUX 88-Key Signature Digital Piano With Stand in Black</div>
+          </div>
+          <div class="item">
+            <img src="/images/recorder1.webp" alt="cart-item">
+            <div>
+              Tascam Digital DP24SD Portastudio 24 Track Elegant Multitrack
+              Recorder
             </div>
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
-            </div>
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
-            </div>
-            <div class="item">
-                <img src="/images/guitar1.webp"/>
-                <div>Charvel Joe Duplantier Style 2 Electric Guitar in Natural Mahogany</div>
-            </div>
+          </div>
+          <div class="item">
+            <img src="/images/violin1.webp" alt="cart-item">
+            <div>Yamaha Signature 4/4 Size Violin Outfit</div>
+          </div>
         </div>
+        <div class="cart-address cart-container">
+          <div class="cart-address-header">Delivery Address</div>
+          <div>678 Guildwood Way</div>
+          <div>Mississauga, Ontario</div>
+          <div>L3T 1R6</div>
+        </div>
+        <div class="cart-container place-order-container">
+          <button class="place-order">Place order</button>
+        </div>
+      </div>
     </div>
-    </div>
-    <img id="home" class="wallpaper" src="images/wallpaper.png"/>
+    <img id="home" class="wallpaper" src="images/wallpaper.png" alt="wallpaper">
     <div class="sign">
-        <span class="flicker">Year End Sale ON!!</span>
+      <span class="flicker">Year End Sale ON!!</span>
     </div>
     <div id="shop-online" class="tiles container">
-        <div>
-            <div class="guitar-tile">
-                <div><a href="shop-details.html#guitar-items" class="title-style">Guitar Store</a></div>
-`              </div>
-            <div class="drum-tile">
-                <div><a href="shop-details.html#drum-items" class="title-style">Drum Store</a></div>
-            </div>
-            <div class="band-tile">
-                <div><a href="shop-details.html#band-items" class="title-style">Band & Orchestra</a></div>
-            </div>
-            <div class="piano-tile">
-                <div><a href="shop-details.html#piano-items" class="title-style">Pianos & Keyboards</a></div>
-            </div>
+      <div>
+        <div class="guitar-tile">
+          <div>
+            <a href="shop-details.html#guitar-items" class="title-style"
+              >Guitar Store</a
+            >
+          </div>
+          `
         </div>
-        <div>
-            <div class="recording-tile">
-                <div><a href="shop-details.html#recorder-items" class="title-style">Recording</a></div>
-            </div>
-            <div class="violin-tile">
-                <div><a href="shop-details.html#violin-items" class="title-style">Violin</a></div>
-            </div>
-            <div class="dj-tile">
-                <div><a href="shop-details.html#dj-items" class="title-style">DJ & Lighting</a></div>
-            </div>
-            <div class="music-tile">
-                <div><a href="shop-details.html#book-items" class="title-style">Music Book Store</a></div>
-            </div>
+        <div class="drum-tile">
+          <div>
+            <a href="shop-details.html#drum-items" class="title-style"
+              >Drum Store</a
+            >
+          </div>
         </div>
-
+        <div class="band-tile">
+          <div>
+            <a href="shop-details.html#band-items" class="title-style"
+              >Band & Orchestra</a
+            >
+          </div>
+        </div>
+        <div class="piano-tile">
+          <div>
+            <a href="shop-details.html#piano-items" class="title-style"
+              >Pianos & Keyboards</a
+            >
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="recording-tile">
+          <div>
+            <a href="shop-details.html#recorder-items" class="title-style"
+              >Recording</a
+            >
+          </div>
+        </div>
+        <div class="violin-tile">
+          <div>
+            <a href="shop-details.html#violin-items" class="title-style"
+              >Violin</a
+            >
+          </div>
+        </div>
+        <div class="dj-tile">
+          <div>
+            <a href="shop-details.html#dj-items" class="title-style"
+              >DJ & Lighting</a
+            >
+          </div>
+        </div>
+        <div class="music-tile">
+          <div>
+            <a href="shop-details.html#book-items" class="title-style"
+              >Music Book Store</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <div id="search" class="search">
-        <div class="search-text">What can we help you find?</div>
-        <input type="text"/>
+      <div class="search-text">What can we help you find?</div>
+      <input type="text">
     </div>
     <div id="about" class="about-us container">
-        <div class="about-us-header">About Us</div>
-        <div class="about-us-desc"> One of the world's largest and best music instrument retail stores, Melody Music Store offers sales, service, rentals, and lessons for all types of musical instruments in a world-class facility.
-            We're more than just a music store. We're much more than that.
-            Whether it's buying an instrument, renting gear, improving your playing, getting your equipment or instrument back in top shape, helping your event run smoothly, setting up the A/V for your organization, or simply a cool place to hang out and enjoy a coffee, we've got you covered.
-        </div>
+      <div class="about-us-header">About Us</div>
+      <div class="about-us-desc">
+        One of the world's largest and best music instrument retail stores,
+        Melody Music Store offers sales, service, rentals, and lessons for all
+        types of musical instruments in a world-class facility. We're more than
+        just a music store. We're much more than that. Whether it's buying an
+        instrument, renting gear, improving your playing, getting your equipment
+        or instrument back in top shape, helping your event run smoothly,
+        setting up the A/V for your organization, or simply a cool place to hang
+        out and enjoy a coffee, we've got you covered.
+      </div>
     </div>
-    <div class="about-us-img"><img class="container" src="images/about_us.png"/></div>
+    <div class="about-us-img">
+      <img class="container" src="images/about_us.png" alt="about us">
+    </div>
     <div id="repairs" class="repairs container">
-        <div class="repairs-header">Repairs</div>
-        <div class="row repairs-content">
+      <div class="repairs-header">Repairs</div>
+      <div class="row repairs-content">
         <div class="col">
-            <div class="tabs">
+          <div class="tabs">
             <div class="tab">
-                <input type="checkbox" id="chck1">
-                <label class="tab-label" for="chck1">Re-Stringing</label>
-                <div class="tab-content">
-                    Acoustic 6 String Guitar  -  $28<br>
-                    Acoustic 12 String - $38<br>
-                    Classical Guitar  -  $33<br>
-                    Electric Doubleneck	- $70<br>
-                    Electric Locking Nut - $39<br>
-                    Electric 7&8 String Fixed - $35<br>
-                    Electric Fixed Bridge - $28<br>
-                    Electric Strat Styled Trem - $30<br>
-                    Electric 7&8 String Floyd - $44<br>
-                    Electric 12 String - $44<br>
-                    Bass Guitar - $28<br>
-                    Mandolin - $40<br>
-                    Violin - $28<br>
-                </div>
-            </div>
-            <div class="tab">
-                <input type="checkbox" id="chck2">
-                <label class="tab-label" for="chck2">Setups</label>
-                <div class="tab-content">
-                    Acoustic 6 String - $80<br>
-                    Acoustic 12 String - $110<br>
-                    Classical Guitar - $80<br>
-                    Electric Fixed Bridge - $85<br>
-                    Electric 12 String - $110<br>
-                    Electric Doublenecks - $185<br>
-                    Electric Trem Strat - $90<br>
-                    Electric Floyd Style - $110<br>
-                    Electric 7 String Fixed Bridge - $90<br>
-                    Electric 7 String Floyd - $125<br>
-                    Electric 8 String Fixed Bridge - $90<br>
-                    Electric 8 String Floyd - $135<br>
-                    Bass Guitar - $85<br>
-                    Mandolin - $85<br>
-                    Banjo - $120<br>
-                    Violin - $70<br>
-                </div>
+              <input type="checkbox" id="chck1">
+              <label class="tab-label" for="chck1">Re-Stringing</label>
+              <div class="tab-content">
+                Acoustic 6 String Guitar - $28<br>
+                Acoustic 12 String - $38<br>
+                Classical Guitar - $33<br>
+                Electric Doubleneck - $70<br>
+                Electric Locking Nut - $39<br>
+                Electric 7&8 String Fixed - $35<br>
+                Electric Fixed Bridge - $28<br>
+                Electric Strat Styled Trem - $30<br>
+                Electric 7&8 String Floyd - $44<br>
+                Electric 12 String - $44<br>
+                Bass Guitar - $28<br>
+                Mandolin - $40<br>
+                Violin - $28<br>
+              </div>
             </div>
             <div class="tab">
-                <input type="checkbox" id="chck3">
-                <label class="tab-label" for="chck3">Structural Repairs</label>
-                <div class="tab-content">
-                    Plek Services-Initial Scan - $45<br>
-                    Plek-Scan, Fret Level & Crown - $199<br>
-                    Plek-Scan, Fingerboard Level-Fretless - $199<br>
-                    Plek-Scan, New Nut from Blank - $199<br>
-                    Structural Repair-Misc - By quote only<br>
-                    Remove sharp fret edges - $35<br>
-                    Install – Machine Heads start at - $30+<br>
-                    Structural Glue Cracked Headstock - By quote only<br>
-                    Structural Repair Severed Headstock - $185+<br>
-                    Refretting by technician quote - By quote only<br>
-                    Install Strap Pin - $10<br>
-                    Humidity Treatment - $50+<br>
-                    Install-Strap Pin with Dowell - $24<br>
-                    Nut Replacement-6 string-Premade - $130<br>
-                </div>
+              <input type="checkbox" id="chck2">
+              <label class="tab-label" for="chck2">Setups</label>
+              <div class="tab-content">
+                Acoustic 6 String - $80<br>
+                Acoustic 12 String - $110<br>
+                Classical Guitar - $80<br>
+                Electric Fixed Bridge - $85<br>
+                Electric 12 String - $110<br>
+                Electric Doublenecks - $185<br>
+                Electric Trem Strat - $90<br>
+                Electric Floyd Style - $110<br>
+                Electric 7 String Fixed Bridge - $90<br>
+                Electric 7 String Floyd - $125<br>
+                Electric 8 String Fixed Bridge - $90<br>
+                Electric 8 String Floyd - $135<br>
+                Bass Guitar - $85<br>
+                Mandolin - $85<br>
+                Banjo - $120<br>
+                Violin - $70<br>
+              </div>
             </div>
             <div class="tab">
-                <input type="checkbox" id="chck4">
-                <label class="tab-label" for="chck4">Wiring and Electronics</label>
-                <div class="tab-content">
-                    Complete Guitar Re-wiring - By quote only<br>
-                    Install-Acoustic Guitar Pickup Starting at - $80<br>
-                    Install-Acoustic Pickup w/Preamp w/side mounted EQ - $140<br>
-                    Retrofit pickups start - $45<br>
-                </div>
+              <input type="checkbox" id="chck3">
+              <label class="tab-label" for="chck3">Structural Repairs</label>
+              <div class="tab-content">
+                Plek Services-Initial Scan - $45<br>
+                Plek-Scan, Fret Level & Crown - $199<br>
+                Plek-Scan, Fingerboard Level-Fretless - $199<br>
+                Plek-Scan, New Nut from Blank - $199<br>
+                Structural Repair-Misc - By quote only<br>
+                Remove sharp fret edges - $35<br>
+                Install – Machine Heads start at - $30+<br>
+                Structural Glue Cracked Headstock - By quote only<br>
+                Structural Repair Severed Headstock - $185+<br>
+                Refretting by technician quote - By quote only<br>
+                Install Strap Pin - $10<br>
+                Humidity Treatment - $50+<br>
+                Install-Strap Pin with Dowell - $24<br>
+                Nut Replacement-6 string-Premade - $130<br>
+              </div>
             </div>
+            <div class="tab">
+              <input type="checkbox" id="chck4">
+              <label class="tab-label" for="chck4"
+                >Wiring and Electronics</label
+              >
+              <div class="tab-content">
+                Complete Guitar Re-wiring - By quote only<br>
+                Install-Acoustic Guitar Pickup Starting at - $80<br>
+                Install-Acoustic Pickup w/Preamp w/side mounted EQ - $140<br>
+                Retrofit pickups start - $45<br>
+              </div>
             </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
     <div id="used-gear" class="waviy container">
-        <span style="--i:1">U</span>
-        <span style="--i:2">s</span>
-        <span style="--i:3">e</span>
-        <span style="--i:4">d</span>
-        <span style="--i:5"> </span>
-        <span style="--i:6">G</span>
-        <span style="--i:7">e</span>
-        <span style="--i:8">a</span>
-        <span style="--i:9">r</span>
-        <span style="--i:10">s</span>
+      <span style="--i: 1">U</span>
+      <span style="--i: 2">s</span>
+      <span style="--i: 3">e</span>
+      <span style="--i: 4">d</span>
+      <span style="--i: 5"> </span>
+      <span style="--i: 6">G</span>
+      <span style="--i: 7">e</span>
+      <span style="--i: 8">a</span>
+      <span style="--i: 9">r</span>
+      <span style="--i: 10">s</span>
     </div>
     <div class="used-gear container">
+      <div>
+        <a href="#used-gear-1">
+          <span>10% off</span>
+          <img src="/images/used-1.webp" alt="used-gear">
+          <div>Ibanez RGA High Performance Floyd in Laser Blue</div>
+        </a>
+        <a href="#used-gear-2">
+          <img src="/images/used-2.webp" alt="used-gear">
+          <div>
+            Vintage Martin 1975 D28 Dreadnought Acoustic Guitar w/Hardcase
+          </div>
+        </a>
         <div>
-            <div>
-                <span>10% off</span>
-                <img src="/images/used-1.webp" />
-                <div>Ibanez RGA High Performance Floyd in Laser Blue</div>
-            </div>
-            <div>
-                <img src="/images/used-2.webp" />
-                <div>Vintage Martin 1975 D28 Dreadnought Acoustic Guitar w/Hardcase</div>
-            </div>
-            <div >
-                <span>30% off</span>
-                <img src="/images/used-3.webp" />
-                <div>Tama - Starclassic 6 Piece Drum Kit</div>
-            </div>
-            <div >
-                <img src="/images/used-4.jpeg" />
-                <div>Hotone NOS Nano Legacy Speaker Cabinet-New in Box</div>
-            </div>
+          <span>30% off</span>
+          <img src="/images/used-3.webp" alt="used-gear">
+          <div>Tama - Starclassic 6 Piece Drum Kit</div>
         </div>
         <div>
-            <div>
-                <img src="/images/used-5.jpeg" />
-                <div>Roland TD17KVS Electronic Drum Kit with Mesh Heads and Stand</div>
-            </div>
-            <div>
-                <span>20% off</span>
-                <img src="/images/used-6.jpeg" />
-                <div>Roland VERSELAB mv-1 Song Production Studio</div>
-            </div>
-            <div>
-                <img src="/images/used-7.jpeg" />
-                <div>Electronics Vortex Flanger Effects Pedal w/Toneprint</div>
-            </div>
-            <div>
-                <img src="/images/used-8.jpeg" />
-                <div>Bogner Alchemist 40w 2x12 Tube Guitar Amp</div>
-            </div>
+          <img src="/images/used-4.jpeg" alt="used-gear">
+          <div>Hotone NOS Nano Legacy Speaker Cabinet-New in Box</div>
         </div>
+      </div>
+      <div>
+        <div>
+          <img src="/images/used-5.jpeg" alt="used-gear">
+          <div>
+            Roland TD17KVS Electronic Drum Kit with Mesh Heads and Stand
+          </div>
+        </div>
+        <div>
+          <span>20% off</span>
+          <img src="/images/used-6.jpeg" alt="used-gear">
+          <div>Roland VERSELAB mv-1 Song Production Studio</div>
+        </div>
+        <div>
+          <img src="/images/used-7.jpeg" alt="used-gear">
+          <div>Electronics Vortex Flanger Effects Pedal w/Toneprint</div>
+        </div>
+        <div>
+          <img src="/images/used-8.jpeg" alt="used-gear">
+          <div>Bogner Alchemist 40w 2x12 Tube Guitar Amp</div>
+        </div>
+      </div>
     </div>
-    
-    <div id="get-in-touch" class="get-in-touch ">
-        <div class="waviy container">
-            <span class="waivy-getin" style="--i:1">Get</span>
-            <span class="waivy-getin" style="--i:2">in</span>
-            <span class="waivy-getin" style="--i:3">Touch</span>
-            <span class="waivy-getin" style="--i:4">.</span>
-            <span class="waivy-getin" style="--i:5">.</span>
-            <span class="waivy-getin" style="--i:6">.</span>
+
+    <div id="used-gear-1" class="used-gear-overlay overlay">
+      <div class="popup used-gear-popup">
+        <a class="close" href="#">&times;</a>
+        <img class="used-desc-img" src="/images/used-1.webp" alt="used-gear">
+        <div class="used-name">
+          Ibanez RGA High Performance Floyd in Laser Blue
         </div>
-        <form action="/">
-            <div class="getin-left"></div>
-            <div class="getin-right"></div>
-            <div class="getin-content">
-              <h1>Contact us</h1>
-              <input type="text" placeholder="Username">
-              <input type="email" placeholder="Email">
-              <textarea placeholder="Message..." rows="6"></textarea>
-              <button type="submit" href="/">Submit</button>
-            </div>
-        </form>
+        <div class="used-gear-desc">
+          <div class="used-subheader">Description</div>
+          <div class="used-subheader-desc">
+            This guitar has been inspected and is in great condition, with
+            almost no signs of the typical satin shine that happens over time
+            with being played. Could be considered showroom quality. The Ibanez RGA42HP solidbody electric guitar features a fast maple
+             Wizard III neck and a jatoba fingerboard with a 15.7" radius, designed to play at high speeds. A balanced RG Nyatoh body
+            with plenty of richness and snap, finished off with eye-catching gold hardware, makes this guitar feel wonderful right away. Two hot DiMarzio Fusion Edge humbucking pickups with a
+          </div>
+          <div class="used-price">
+            <div>$1299.00</div>
+            <button class="used-add-to-cart">Add to Cart</button>
+          </div>
+          <img class="used-overlay-img" src="/images/used-overlay-img.png" alt="used-gear">
+        </div>
+      </div>
+    </div>
+    <div id="used-gear-2" class="used-gear-overlay overlay">
+      <div class="popup used-gear-popup">
+        <a class="close" href="#">&times;</a>
+        <img class="used-desc-img" src="/images/used-2.webp" alt="used-gear">
+        <div class="used-name">
+          Vintage Martin 1975 D28 Dreadnought Acoustic Guitar w/Hardcase
+        </div>
+        <div class="used-gear-desc">
+          <div class="used-subheader">Description</div>
+          <div class="used-subheader-desc">
+            Style-28's rosette, mother-of-pearl dot inlays, and marquetry backstrip complement its Sitka Spruce top and East Indian Rosewood back and sides.
+            It has a Mahogany neck with a Low profile for easy playing, and a beautiful Ebony fingerboard.
+            Additionally, the guitar features a 25.4" scale length, a 1 11/16" nut width, a black pickguard, black/white/black trim, X-scalloped bracing, and an Ebony belly bridge.
+          </div>
+          <div class="used-price">
+            <div>$899.00</div>
+            <button class="used-add-to-cart">Add to Cart</button>
+          </div>
+          <img class="used-overlay-img" src="/images/used-overlay-img.png" alt="used-gear">
+        </div>
+      </div>
+    </div>
+
+    <div id="get-in-touch" class="get-in-touch">
+      <div class="waviy container">
+        <span class="waivy-getin" style="--i: 1">Get</span>
+        <span class="waivy-getin" style="--i: 2">in</span>
+        <span class="waivy-getin" style="--i: 3">Touch</span>
+        <span class="waivy-getin" style="--i: 4">.</span>
+        <span class="waivy-getin" style="--i: 5">.</span>
+        <span class="waivy-getin" style="--i: 6">.</span>
+      </div>
+      <form action="/">
+        <div class="getin-left"></div>
+        <div class="getin-right"></div>
+        <div class="getin-content">
+          <h1>Contact us</h1>
+          <input type="text" placeholder="Username">
+          <input type="email" placeholder="Email">
+          <textarea placeholder="Message..." rows="6"></textarea>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="footer">
+      <div class="container footer-container">
+        <div>
+          <h4>STORE POLICIES</h4>
+          <ul>
+            <li>Shipping</li>
+            <li>Return & Exchanges</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div>
+          <h4>EXPERIENCE MORE</h4>
+          <ul>
+            <li>About</li>
+            <li>Music Lessons</li>
+            <li>Rentals</li>
+            <li>Repairs</li>
+            <li>Clinics & Events</li>
+          </ul>
+          <div class="footer-icons">
+            <i class="fa fa-instagram"></i><i class="fa fa-twitter"></i
+            ><i class="fa fa-youtube"></i>
+          </div>
+        </div>
+        <div>
+          <h4>MELODY MUSIC STORE</h4>
+          <ul>
+            <li>555 Brunel Rd</li>
+            <li>Mississauga, Ontario</li>
+            <li>L87 5T6</li>
+            <li>Canada</li>
+            <li>+1 (647) 456-7865</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
